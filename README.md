@@ -14,6 +14,8 @@ On startup the plugin will process the csv. For each row it will
 verify that the enumeration, old and new values exist. If those
 preconditions are met then `old_value` will be merged into `new_value`.
 
+This process may delay application startup time so plan accordingly.
+
 ## Configuration
 
 By default the CSV is looked for in `/tmp/aspace/merger.csv`.
