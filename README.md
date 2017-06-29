@@ -23,10 +23,16 @@ By default the CSV is looked for in `/tmp/aspace/merger.csv`.
 ```ruby
 AppConfig[:cv_merger] = {
   path: File.join("/tmp", "aspace", "merger.csv"),
+  retry_if_not_found: true
 }
 ```
 
-You may prefer to use something like: `File.join(Dir.tmpdir, "aspace", "merger.csv"),`.
+For the path you may prefer to use something like: `File.join(Dir.tmpdir, "aspace", "merger.csv"),`.
+
+The `retry_if_not_found` setting can be used to search for a lowercase
+version of `old_value` or `new_value` if the value wasn't found using
+the literal string (if the literal string isn't already fully lowercase).
+Set this to `false` to match values only on the literal string in the CSV.
 
 ## License
 
